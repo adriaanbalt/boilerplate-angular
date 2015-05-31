@@ -12,7 +12,7 @@
 		}
 	},
 	
-	"name": "Boilerplate Angular",
+	"name": "Boilerplate-Angular",
 	"description": "Boilerplate Angular",
 	"version": "0.0.1",
 	"private": false,
@@ -36,8 +36,7 @@
 		"grunt-contrib-watch": "^0.6.1",
 		"grunt-modernizr": "~0.3.0",
 		"load-grunt-tasks": "^0.4.0",
-		"time-grunt": "^0.3.1",
-		"grunt-browserify": "^3.6.0"
+		"time-grunt": "^0.3.1"
 	}
 }
 
