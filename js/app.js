@@ -14,6 +14,12 @@ angular.module('boilerplate')
     return _service;
         
 }])
+/**
+ * @ngdoc directive
+ * @name boilerplate.directive
+ * @description
+ * 
+ */
 .directive('screen', [function() {
     return {
         restrict: 'ECA',
@@ -23,6 +29,12 @@ angular.module('boilerplate')
         }
     }
 }])
+/**
+ * @ngdoc controller
+ * @name boilerplate.controller
+ * @description
+ * 
+ */
 .controller('Controller', ['$scope', '$rootScope', 'Service', function($scope, $rootScope, Service) {
         
 }]);
