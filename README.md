@@ -46,7 +46,8 @@ grunt
 
 ### Installation
 
-1. Clone the master version of this Git repository ```git clone git@github.com:adriaanbalt/boilerplate-angular.git```
+1. Clone the master version of this Git repository
+```git clone git@github.com:adriaanbalt/boilerplate-angular.git```
 
 2. Run ```npm install```
 
