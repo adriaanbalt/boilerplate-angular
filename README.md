@@ -46,10 +46,10 @@ grunt
 
 ### Installation
 
-1. Pull the master version of this Git repository.
+1. Clone the master version of this Git repository ```git clone git@github.com:adriaanbalt/boilerplate-angular.git```
 
 2. Run ```npm install```
 
 3. Run ```grunt``` in the root folder of Git repository.
 
-4. This will open your browser to localhost:7777 using CONNECT that is pointed to the generated "/dist" folder.
+4. This will open your browser to ```localhost:7777``` using Node Module "Connect" that is pointed to the generated "/dist" folder.
