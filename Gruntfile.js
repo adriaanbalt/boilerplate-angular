@@ -3,6 +3,8 @@ module.exports = function(grunt) {
     
     require('time-grunt')(grunt);
 
+    var browserifySiteConfig = require('./browserify.config.js');
+
     grunt.initConfig({
 
         // Package Info
@@ -35,7 +37,8 @@ module.exports = function(grunt) {
                     dest: '<%= pkg.directory.dest %>',
                     src: [
                         'index.html',
-                        'assets/**/*'
+                        'assets/ajax/**/*',
+                        'assets/images/**/*'
                     ]
                 }]
             },
@@ -74,7 +77,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: ['<%= pkg.paths.page.js %>'],
-                tasks: ['copy:dist'],
+                tasks: ['browserify'],
                 options: {
                     livereload: true
                 }
@@ -119,6 +122,19 @@ module.exports = function(grunt) {
             }
         },
 
+        // Browserify
+        // https://github.com/jmreidy/grunt-browserify
+        browserify: {
+            app: {
+                files: {
+                    '<%= pkg.directory.dest %>/assets/js/app.min.js': ['<%= pkg.directory.app %>/assets/js/app.js']
+                },
+                options: {
+                    alias: browserifySiteConfig,
+                    debug: true
+                }
+            }
+        },
 
         // Concurrent
         // Allow multiple tasks to occur at once.  Using this technique because it gives us flexibility in the future to add other tasks such as CONNECT.
@@ -143,6 +159,9 @@ module.exports = function(grunt) {
 
         // Sass compilation
         'compass:dist',
+
+        // Concat Required Browserify Modules
+        'browserify',
 
         // Copy HTML and assets
         'copy:dist'
