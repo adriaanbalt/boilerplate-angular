@@ -1,3 +1,4 @@
+/dist
 
 ### ignore submodule since each agency will have a unique fork ###
 #.gitmodules
