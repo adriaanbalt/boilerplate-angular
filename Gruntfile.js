@@ -34,7 +34,18 @@ module.exports = function(grunt) {
                     cwd: '<%= pkg.directory.app %>',
                     dest: '<%= pkg.directory.dest %>',
                     src: [
+                        'index.html',
                         'assets/**/*'
+                    ]
+                }]
+            },
+            html: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= pkg.directory.app %>',
+                    dest: '<%= pkg.directory.dest %>',
+                    src: [
+                        'index.html'
                     ]
                 }]
             }
@@ -83,8 +94,8 @@ module.exports = function(grunt) {
                 }
             },
             html: {
-                files: ['<%= pkg.paths.page.partials %>','<%= pkg.paths.page.pages %>'],
-                tasks: ['assemble:dist'],
+                files: ['<%= pkg.paths.page.partials %>'],
+                tasks: ['copy:html'],
                 options: {
                     livereload: true
                 }
@@ -139,9 +150,6 @@ module.exports = function(grunt) {
 
         // reuse the above build task.  gives us core flexibilty if we want to add more types of tasks in the future
         'build',
-
-        // Assemble the HTML files
-        'assemble:dist',
 
         // Runs WATCH 
         'concurrent:dist'
