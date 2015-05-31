@@ -23,6 +23,6 @@ angular.module('boilerplate')
         }
     }
 }])
-.controller('Controller', ['$scope', '$rootScope', function($scope, $rootScope) {
+.controller('Controller', ['$scope', '$rootScope', 'Service', function($scope, $rootScope, Service) {
         
 }]);
