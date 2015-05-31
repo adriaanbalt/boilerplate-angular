@@ -1,6 +1,7 @@
 "use strict";
 
 angular.module('boilerplate')
+
 /**
  * @ngdoc service
  * @name boilerplate.service
@@ -14,6 +15,7 @@ angular.module('boilerplate')
     return _service;
         
 }])
+
 /**
  * @ngdoc directive
  * @name boilerplate.directive
@@ -29,6 +31,7 @@ angular.module('boilerplate')
         }
     }
 }])
+
 /**
  * @ngdoc controller
  * @name boilerplate.controller
