@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         // Watch
         // Watches for changes to specific files
         // https://github.com/gruntjs/grunt-contrib-watch
@@ -102,11 +102,29 @@ module.exports = function(grunt) {
             }
         },
 
+        // Grunt Connect
+        // https://github.com/gruntjs/grunt-contrib-connect
+        // Used to create a static web server for dev
+        connect: {
+            options: {
+                port: 7777,
+                keepalive: true,
+                hostname: 'localhost'
+            },
+            dist: {
+                options: {
+                    open: true,
+                    base: 'dist'
+                }
+            }
+        },
+
+
         // Concurrent
         // Allow multiple tasks to occur at once.  Using this technique because it gives us flexibility in the future to add other tasks such as CONNECT.
         // https://github.com/sindresorhus/grunt-concurrent
         concurrent: {
-            dist: ['watch'],
+            dist: ['watch','connect'],
             options: {
                 logConcurrentOutput: true
             }
