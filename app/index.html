@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="Project">
+<html ng-app="boilerplate">
     <head>
 
         <meta charset="utf-8" />
@@ -30,12 +30,18 @@
     <body>
         <div>Welcome to the Boilerplate!</div>
         <div class="wrapper">
-            <div ng-view></div>
-        </div>
-        <script type="text/javascript" src="assets/js/vendor/jquery.js"></script>
-        <script type="text/javascript" src="assets/js/vendor/angular.js"></script>
-        <script type="text/javascript" src="assets/js/vendor/angular-route.js"></script>
+            <div class="widget">
+                <input type="text" class="" ng-keyup="keyUp($event)" ng-model="fieldValue" required="" name="" placeholder="" ng-click="click($event)">
+                <!-- <select>
+                    <option value="hi">Hi</option>
+                </select> -->
 
-        <script type="text/javascript" src="assets/js/app.js"></script>
+                <a href="#" ng-click="submit()">SUBMIT</a>
+            </div>
+        </div>
+        <!-- <script type="text/javascript" src="assets/js/vendor/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/vendor/angular.js"></script>
+        <script type="text/javascript" src="assets/js/vendor/angular-route.js"></script> -->
+        <script type="text/javascript" src="assets/js/app.min.js"></script>
     </body>
 </html>
