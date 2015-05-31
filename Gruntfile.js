@@ -67,21 +67,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        // Browserify
-        // https://github.com/jmreidy/grunt-browserify
-        browserify: {
-            app: {
-                files: {
-                    '<%= pkg.directory.dest %>/assets/js/main.min.js': ['<%= pkg.paths.page.js %>/main.js']
-                },
-                options: {
-                    alias: require('./browserify.config.js'),
-                    debug: true
-                }
-            }
-        },
-
+        
         // Watch
         // Watches for changes to specific files
         // https://github.com/gruntjs/grunt-contrib-watch
