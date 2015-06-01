@@ -14,7 +14,7 @@ Boilerplate to build an AngularJS web app
 * [Connect](https://github.com/gruntjs/grunt-contrib-connect)
 * [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)
 * [grunt-contrib-csslint](https://github.com/gruntjs/grunt-contrib-csslint)
-* [grunt-browserify](https://github.com/gruntjs/grunt-browserify)
+* [grunt-browserify](https://github.com/jmreidy/grunt-browserify)
 * [Watch / Live reload](https://github.com/gruntjs/grunt-contrib-watch)
 * [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
 
