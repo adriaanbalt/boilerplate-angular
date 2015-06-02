@@ -2,7 +2,7 @@
 
 ###Introduction
 
-Boilerplate to build an AngularJS web app
+Boilerplate to build an AngularJS web app.  Includes global files such as SCSS mixins and JS vendors files.  @TODO: have the ```global/js/vendor``` files referenced in the browserify config instead of those in the app.
 
 ### Node Modules
 
