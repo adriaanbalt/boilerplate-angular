@@ -17,14 +17,16 @@ Boilerplate to build an AngularJS web app
 * [grunt-browserify](https://github.com/jmreidy/grunt-browserify)
 * [Watch / Live reload](https://github.com/gruntjs/grunt-contrib-watch)
 * [load-grunt-tasks](https://github.com/sindresorhus/load-grunt-tasks)
+* [Assemble](https://github.com/assemble/assemble)
+* [Handlebars Helpers](https://github.com/assemble/handlebars-helpers)
 
 ### Libraries
 
 * [Compass](http://compass-style.org/)
 * [NPM](https://www.npmjs.com)
-* [NVM](https://github.com/creationix/nvm)
 * [RVM](https://github.com/creationix/nvm)
 * [Node](http://nodejs.org/)
+* [NVM](https://github.com/creationix/nvm) (optional)
 
 ### Requirements
 Make sure your have the following installed with these versions or greater when running the bootstrap
@@ -33,24 +35,26 @@ Make sure your have the following installed with these versions or greater when 
 * ```Sass v3.3.9```
 * ```Compass >1.0.0.alpha.20```
 
-### Dependencies
-
-#### Grunt Task(s)
+### Grunt Task(s)
 
 ##### Default
-Runs the degault task.  Compiles the languages into their corresponding folders in the /dist directory.
+Runs the default task:
 
 ```
 grunt 
 ```
 
+Includes Assemble, 
+
 ### Installation
 
-1. Clone the master version of this Git repository
+1. Install the above libraries
+
+2. Clone the master version of this Git repository
 ```git clone git@github.com:adriaanbalt/boilerplate-angular.git```
 
-2. Run ```npm install```
+3. Run ```npm install```
 
-3. Run ```grunt``` in the root folder of Git repository.
+4. Run ```grunt``` in the root folder of Git repository.
 
-4. This will open your browser to ```localhost:7777``` using Node Module "Connect" that is pointed to the generated "/dist" folder.
+5. This will open your browser to ```localhost:7777``` using Node Module "Connect" that is pointed to the generated "/dist" folder.
