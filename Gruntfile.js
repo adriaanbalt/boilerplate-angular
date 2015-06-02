@@ -41,16 +41,6 @@ module.exports = function(grunt) {
                         'assets/images/**/*'
                     ]
                 }]
-            },
-            html: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= pkg.directory.app %>',
-                    dest: '<%= pkg.directory.dest %>',
-                    src: [
-                        'index.html'
-                    ]
-                }]
             }
         },
 
@@ -60,47 +50,50 @@ module.exports = function(grunt) {
         compass: {
             dist: {
                 options: {
-                    sassDir: '<%= pkg.directory.app %>/scss',
+                    sassDir: '<%= pkg.paths.page.scss %>',
                     cssDir: '<%= pkg.directory.dest %>/assets/css',
                     imagesDir: '<%= pkg.directory.dest %>/assets/images',
                     javascriptDir: '<%= pkg.directory.dest %>/assets/js',
                     fontsDir: '<%= pkg.directory.dest %>/assets/fonts',
                     relativeAssets: false,
-                    outputStyle: 'expanded'
+                    outputStyle: 'expanded',
+					importPath: '<%= pkg.paths.global.scss %>' // Compass will also look at the global scss file directory
                 }
             }
         },
 
-        // Watch
-        // Watches for changes to specific files
-        // https://github.com/gruntjs/grunt-contrib-watch
-        watch: {
-            js: {
-                files: ['<%= pkg.paths.page.js %>'],
-                tasks: ['browserify'],
+        // Assemble
+        // Static site generator for Node.js, Grunt.js, and Yeoman (and soon, Gulp).
+        // https://github.com/assemble/assemble
+        assemble: {
+            dist: {
                 options: {
-                    livereload: true
-                }
-            },
-            html: {
-                files: ['<%= pkg.paths.page.partials %>'],
-                tasks: ['copy:html'],
+                    assets: '<%= pkg.directory.dest %>',
+                    partials: ['<%= pkg.paths.page.partials %>'],
+                    layout: ['<%= pkg.paths.page.layout %>'],
+                    data: ['<%= pkg.paths.page.data %>'],
+                    production: true,
+                    pages: ['<%= pkg.paths.page.pages %>']
+                },
+                files: [{
+                    expand: true,
+                    src: ['**/*.hbs'],
+                    cwd: '<%= pkg.directory.app %>/views/pages/',
+                    dest: '<%= pkg.directory.dest %>'
+                }]
+            }
+        },
+
+        // Browserify
+        // https://github.com/jmreidy/grunt-browserify
+        browserify: {
+            app: {
+                files: {
+                    '<%= pkg.directory.dest %>/assets/js/app.min.js': ['<%= pkg.directory.app %>/assets/js/app.js']
+                },
                 options: {
-                    livereload: true
-                }
-            },
-            styles: {
-                files: ['<%= pkg.paths.page.scss %>/**/*.scss'],
-                tasks: ['compass'],
-                options: {
-                    livereload: true
-                }
-            },
-            json: {
-                files: ['<%= pkg.paths.page.ajax %>'],
-                tasks: ['copy:dist','assemble:dist'],
-                options: {
-                    livereload: true
+                    alias: browserifySiteConfig,
+                    debug: true
                 }
             }
         },
@@ -121,21 +114,40 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        // Browserify
-        // https://github.com/jmreidy/grunt-browserify
-        browserify: {
-            app: {
-                files: {
-                    '<%= pkg.directory.dest %>/assets/js/app.min.js': ['<%= pkg.directory.app %>/assets/js/app.js']
-                },
+        
+        // Watch
+        // Watches for changes to specific files
+        // https://github.com/gruntjs/grunt-contrib-watch
+        watch: {
+            js: {
+                files: ['<%= pkg.paths.page.js %>'],
+                tasks: ['browserify'],
                 options: {
-                    alias: browserifySiteConfig,
-                    debug: true
+                    livereload: true
+                }
+            },
+            html: {
+                files: ['<%= pkg.paths.page.partials %>','<%= pkg.paths.page.pages %>'],
+                tasks: ['assemble:dist'],
+                options: {
+                    livereload: true
+                }
+            },
+            styles: {
+                files: ['<%= pkg.paths.page.scss %>/**/*.scss'],
+                tasks: ['compass'],
+                options: {
+                    livereload: true
+                }
+            },
+            json: {
+                files: ['<%= pkg.paths.page.data %>','<%= pkg.paths.page.ajax %>'],
+                tasks: ['copy:dist','assemble:dist'],
+                options: {
+                    livereload: true
                 }
             }
         },
-
         // Concurrent
         // Allow multiple tasks to occur at once.  Using this technique because it gives us flexibility in the future to add other tasks such as CONNECT.
         // https://github.com/sindresorhus/grunt-concurrent
@@ -164,8 +176,10 @@ module.exports = function(grunt) {
         'browserify',
 
         // Copy HTML and assets
-        'copy:dist'
+        'copy:dist',
 
+        // Generate HTML
+        'assemble:dist'
     ]);
 
     // Development grunt task
