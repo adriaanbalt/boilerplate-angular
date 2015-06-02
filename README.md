@@ -44,7 +44,7 @@ Runs the default task:
 grunt 
 ```
 
-Includes Assemble, 
+includes Assemble, Browserify, Compass, Connect, Clean, Watch (with live reload), Copy
 
 ### Installation
 
