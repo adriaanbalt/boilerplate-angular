@@ -14,6 +14,7 @@
       "partials": "app/views/partials/**/*.hbs",
       "pages": "app/views/pages/**/*.hbs",
       "js": "app/assets/js/**/*.js",
+      "html": "app/assets/js/**/*.html",
       "scss": "app/scss",
       "data": "app/data/**/*.json",
       "ajax": "app/assets/ajax/**/*.json"

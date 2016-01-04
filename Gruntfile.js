@@ -38,7 +38,8 @@ module.exports = function(grunt) {
                     src: [
                         'index.html',
                         'assets/ajax/**/*',
-                        'assets/images/**/*'
+                        'assets/images/**/*',
+                        'assets/js/**/*.html'
                     ]
                 }]
             }
@@ -120,8 +121,8 @@ module.exports = function(grunt) {
         // https://github.com/gruntjs/grunt-contrib-watch
         watch: {
             js: {
-                files: ['<%= pkg.paths.page.js %>'],
-                tasks: ['browserify'],
+                files: ['<%= pkg.paths.page.js %>','<%= pkg.paths.page.html %>'],
+                tasks: ['browserify','copy:dist'],
                 options: {
                     livereload: true
                 }
@@ -148,6 +149,7 @@ module.exports = function(grunt) {
                 }
             }
         },
+
         // Concurrent
         // Allow multiple tasks to occur at once.  Using this technique because it gives us flexibility in the future to add other tasks such as CONNECT.
         // https://github.com/sindresorhus/grunt-concurrent
