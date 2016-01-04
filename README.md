@@ -32,6 +32,7 @@ Boilerplate to build an AngularJS web app.  Includes global files such as SCSS m
 ### Requirements
 Make sure your have the following installed with these versions or greater when running the bootstrap
 
+* ```Angular 1.4.8```
 * ```Node v0.10.26```
 * ```Sass v3.3.9```
 * ```Compass >1.0.0.alpha.20```
