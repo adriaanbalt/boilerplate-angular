@@ -23,6 +23,7 @@ Boilerplate to build an AngularJS web app.  Includes global files such as SCSS m
 ### Libraries
 
 * [Compass](http://compass-style.org/)
+* [Homebrew](http://brew.sh/)
 * [NPM](https://www.npmjs.com)
 * [RVM](https://github.com/creationix/nvm)
 * [Node](http://nodejs.org/)
@@ -48,13 +49,25 @@ includes Assemble, Browserify, Compass, Connect, Clean, Watch (with live reload)
 
 ### Installation
 
-1. Install the above libraries
+#### For Mac Users
 
-2. Clone the master version of this Git repository
-```git clone git@github.com:adriaanbalt/boilerplate-angular.git```
+1. Clone this Git repository
+```$ git clone git@github.com:adriaanbalt/boilerplate-angular.git```
 
-3. Run ```npm install```
+2. Run ```$ npm install```
 
-4. Run ```grunt``` in the root folder of Git repository.
+3. Run ```$ npm install -g grunt-cli```
 
-5. This will open your browser to ```localhost:7777``` using Node Module "Connect" that is pointed to the generated "/dist" folder.
+4. Run ```$ grunt``` in the root folder of Git repository.
+
+5. This will automatically open your browser to ```localhost:7777``` using Node Module "Connect" that is pointed to the generated "/dist" folder.
+
+#### For Windows Users
+
+1. Download the Windows installer from the Nodes.js® web site.
+
+2. Run the installer (the .msi file you downloaded in the previous step.)
+
+3. Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
+
+4. Restart your computer. You won’t be able to run Node.js® until you restart your computer.
