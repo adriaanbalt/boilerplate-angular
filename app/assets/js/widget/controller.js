@@ -8,6 +8,8 @@ module.exports = function(App) {
      * 
      */
     App.controller('widgetCtrl', ['$scope', '$rootScope', 'widgetSrv', function($scope, $rootScope, widgetSrv) {
+        
+        $scope.data = widgetSrv.getName( $scope.endpoint );
 
         $scope.submit = function() {
             console.log ( "submit!" );

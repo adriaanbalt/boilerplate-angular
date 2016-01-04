@@ -11,10 +11,12 @@ module.exports = function(App) {
         return {
             restrict: "C",
             replace: false,
-            templateUrl: "/assets/js/widget/widget.html",
+            scope: {
+                endpoint: "@endpoint"
+            },
+            templateUrl: "/assets/js/widget/template.html",
             controller: "widgetCtrl",
             link: function($scope, elem, attrs) {
-                console.log ( "directive" );
                 $scope.choice = "hi";
             }
         }
