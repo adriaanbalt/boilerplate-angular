@@ -5,12 +5,12 @@
   },
   "paths": {
     "global":{
-      "partials":"global/views/partials/**/*.hbs",
-      "js":"global/js/**/*.js",
-      "scss":"global/scss"
+      "partials":"",
+      "js":"",
+      "scss":""
     },
     "page":{
-      "layout":"global/views/layouts/default.hbs",
+      "layout":"app/views/layout.hbs",
       "partials": "app/views/partials/**/*.hbs",
       "pages": "app/views/pages/**/*.hbs",
       "js": "app/assets/js/**/*.js",
@@ -24,7 +24,7 @@
 
   "name": "Boilerplate-Angular",
   "description": "Boilerplate Angular",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": false,
   "author": "Adriaan Scholvinck <adriaan@balt.us>",
   "repository": {
