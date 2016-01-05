@@ -56,13 +56,13 @@ Note: This will automatically open your browser to ```localhost:7777``` using No
 
 ```
 # Recommend installing [NVM](https://github.com/creationix/nvm)
- curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
 
 # Install Node and NPM
- nvm install v0.10.26
+$ nvm install v0.10.26
 
 # Set Node default
- nvm alias default v0.10.26
+$ nvm alias default v0.10.26
 
 # Clone this GIT Repo
 # --depth 1 removes all but one .git commit history
@@ -77,6 +77,7 @@ $ npm install
 # start the server
 $ grunt
 ```
+Your browser should automatically open to [http://localhost:7777](http://localhost:7777)
 
 #### For Windows Users
 
@@ -102,3 +103,4 @@ $ npm install
 # start the server
 $ grunt
 ```
+Your browser should automatically open to [http://localhost:7777](http://localhost:7777)
