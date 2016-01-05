@@ -58,7 +58,7 @@ module.exports = function(grunt) {
                     fontsDir: '<%= pkg.directory.dest %>/assets/fonts',
                     relativeAssets: false,
                     outputStyle: 'expanded',
-					importPath: '<%= pkg.paths.global.scss %>' // Compass will also look at the global scss file directory
+					importPath: '' // Compass will also look at the global scss file directory
                 }
             }
         },
