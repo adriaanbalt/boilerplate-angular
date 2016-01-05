@@ -7,12 +7,13 @@ module.exports = function(App) {
      * @description
      * 
      */
-    App.controller('widgetCtrl', ['$scope', '$rootScope', 'widgetSrv', function($scope, $rootScope, widgetSrv) {
+    App.controller('widgetCtrl', ['$scope', '$rootScope', '$location', 'widgetSrv', function($scope, $rootScope, $location, widgetSrv) {
         
         $scope.data = widgetSrv.getName( $scope.endpoint );
 
         $scope.submit = function() {
-            console.log ( "submit!" );
+            console.log ( "submit!", $scope.data );
+            $location.path('/article/'+$scope.data);
         };
 
         $scope.click = function($event) {
