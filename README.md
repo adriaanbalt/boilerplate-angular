@@ -54,35 +54,51 @@ Note: This will automatically open your browser to ```localhost:7777``` using No
 
 #### For Mac Users
 
-1. Recommend installing [NVM](https://github.com/creationix/nvm)
-```$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash```
+```
+# Recommend installing [NVM](https://github.com/creationix/nvm)
+ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
 
-2. Install Node and NPM
-```$ nvm install v0.10.26```
+# Install Node and NPM
+ nvm install v0.10.26
 
-3. Set Node default
-```$ nvm alias default v0.10.26```
+# Set Node default
+ nvm alias default v0.10.26
 
-4. Clone this Git repository
-```$ git clone git@github.com:adriaanbalt/boilerplate-angular.git```
+# Clone this GIT Repo
+# --depth 1 removes all but one .git commit history
+$ git clone git@github.com:adriaanbalt/boilerplate-angular.git
 
-5. Run ```$ npm install -g grunt-cli```
+# Change directory to our repo
+$ cd boilerplate-angular
 
-6. Run ```$ npm install```
+# Install the repo with npm
+$ npm install
+
+# start the server
+$ grunt
+```
 
 #### For Windows Users
 
-1. Download the Windows installer from the [Nodes.js web site](https://nodejs.org/en).
+```
+# Download the Windows installer from the [Nodes.js web site](https://nodejs.org/en).
 
-2. Run the installer (the .msi file you downloaded in the previous step.)
+# Run the installer (the .msi file you downloaded in the previous step.)
 
-3. Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
+# Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
 
-4. Restart your computer. You won’t be able to run Node.js until you restart your computer.
+# Restart your computer. You won’t be able to run Node.js until you restart your computer.
 
-5. Clone this Git repository
-```$ git clone git@github.com:adriaanbalt/boilerplate-angular.git```
+# Clone this GIT Repo
+# --depth 1 removes all but one .git commit history
+$ git clone git@github.com:adriaanbalt/boilerplate-angular.git
 
-6. Run ```$ npm install -g grunt-cli```
+# Change directory to our repo
+$ cd boilerplate-angular
 
-7. Run ```$ npm install```
+# Install the repo with npm
+$ npm install
+
+# start the server
+$ grunt
+```
