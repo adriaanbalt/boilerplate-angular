@@ -54,7 +54,7 @@ Note: This will automatically open your browser to ```localhost:7777``` using No
 
 #### For Mac Users
 
-```
+```bash
 # Recommend installing [NVM](https://github.com/creationix/nvm)
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
 
@@ -81,7 +81,7 @@ Your browser should automatically open to [http://localhost:7777](http://localho
 
 #### For Windows Users
 
-```
+```bash
 # Download the Windows installer from the [Nodes.js web site](https://nodejs.org/en).
 
 # Run the installer (the .msi file you downloaded in the previous step.)
@@ -105,20 +105,3 @@ $ grunt
 ```
 Your browser should automatically open to [http://localhost:7777](http://localhost:7777)
 
-
-
-
-```bash
-# clone our repo
-# --depth 1 removes all but one .git commit history
-git clone git@github.com:adriaanbalt/boilerplate-angular.git
-
-# change directory to our repo
-cd boilerplate-angular
-
-# install the repo with npm
-npm install
-
-# start the server
-npm start
-```
