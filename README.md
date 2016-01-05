@@ -104,3 +104,21 @@ $ npm install
 $ grunt
 ```
 Your browser should automatically open to [http://localhost:7777](http://localhost:7777)
+
+
+
+
+```bash
+# clone our repo
+# --depth 1 removes all but one .git commit history
+git clone git@github.com:adriaanbalt/boilerplate-angular.git
+
+# change directory to our repo
+cd boilerplate-angular
+
+# install the repo with npm
+npm install
+
+# start the server
+npm start
+```
